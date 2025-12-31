@@ -1,0 +1,43 @@
+<div class="page">
+    <div class="header">DreamDvpr — Solution & Timeline</div>
+
+    <div class="page-content">
+        <div class="grid-2-img">
+            <img src="../assets/proposed.jpg" style="width:100%;">
+
+            <div>
+                <h2>Proposed Solution</h2>
+                <p style="line-height: 1.6; margin-bottom: 20px;">
+                    We propose a comprehensive digital transformation strategy tailored to your specific needs.
+                </p>
+                <ul class="icon-list" style="font-size: 17px;">
+                    {% for s in solutions %}
+                    <li>{{ s }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+
+        <h2 style="margin-top:50px; text-align: center;">Project Timeline</h2>
+        <div class="timeline">
+            {% for t in timeline %}
+            <div class="timeline-item">
+                <div class="timeline-left">
+                    <div class="timeline-title">{{ t.phase }}</div>
+                </div>
+                <div class="timeline-marker">
+                    <div class="circle"></div>
+                </div>
+                <div class="timeline-right">
+                    <p style="margin: 0; line-height: 1.6;">{{ t.desc }}</p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    <div class="footer">
+        <div>DreamDvpr Technology Proposal</div>
+        <div>Page 3</div>
+    </div>
+</div>

@@ -1,0 +1,21 @@
+# Python
+__pycache__/
+*.py[cod]
+*.env
+venv/
+*.sqlite3
+
+# Output PDFs / HTML
+output/
+
+# IDE / OS
+.vscode/
+.idea/
+.DS_Store
+
+# Logs
+*.log
+
+# Node (if Next.js in same repo)
+node_modules/
+.next/

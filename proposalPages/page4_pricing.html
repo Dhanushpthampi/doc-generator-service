@@ -1,0 +1,34 @@
+<div class="page">
+    <div class="header">DreamDvpr — Investment</div>
+
+    <div class="page-content">
+        <h2>Expected Budget</h2>
+        <table>
+            <tr>
+                <th>Service</th>
+                <th>Cost</th>
+            </tr>
+            {% for p in pricing %}
+            <tr>
+                <td>{{ p[0] }}</td>
+                <td>{{ p[1] }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+
+        <h2 style="margin-top:50px;">Optional Add-ons</h2>
+        <div class="addon-grid">
+            {% for a in addons %}
+            <div class="addon">
+                <strong>{{ a.title }}</strong>
+                <p>{{ a.desc }}</p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    <div class="footer">
+        <div>DreamDvpr Technology Proposal</div>
+        <div>Page 4</div>
+    </div>
+</div>

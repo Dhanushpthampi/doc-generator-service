@@ -1,0 +1,274 @@
+@page {
+    size: A4;
+    margin: 0;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    margin-top: 0 !important;
+    font-family: "Outfit", sans-serif;
+    color: #0f172a;
+    background: #f8fafc;
+}
+
+.page {
+    page-break-after: always;
+    padding: 50px;
+    height: 297mm;
+    /* A4 height */
+    width: 210mm;
+    /* A4 width */
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+    /* Prevent spillover pages */
+}
+
+.page-content {
+    flex: 1;
+}
+
+.footer {
+    margin-top: auto;
+    padding-top: 20px;
+    border-top: 1px solid #e2e8f0;
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    color: #64748b;
+}
+
+.page-cover {
+    padding: 0 !important;
+}
+
+.header {
+    font-size: 12px;
+    letter-spacing: 1px;
+    border-bottom: 1px solid #94a3b8;
+    padding-bottom: 8px;
+    margin-bottom: 30px;
+}
+
+/* ---------- GLASS CARD ---------- */
+.card {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(12px);
+    padding: 28px;
+    box-shadow: none;
+}
+
+/* ---------- HERO ---------- */
+.hero-img {
+    height: 45vh;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+}
+
+.hero-content {
+    margin-top: 30px;
+}
+
+.hero-title {
+    font-size: 80px;
+    font-weight: 700;
+    margin: 0;
+    line-height: 1.1;
+}
+
+.hero-tag {
+    color: #0f766e;
+    font-weight: 600;
+    font-size: 18px;
+    letter-spacing: 4px;
+    margin-top: 16px;
+    text-transform: uppercase;
+}
+
+/* ---------- GRIDS ---------- */
+.grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 28px;
+}
+
+.grid-2-img {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 28px;
+}
+
+/* ---------- ICON LIST ---------- */
+.icon-list li {
+    list-style: none;
+    margin-bottom: 12px;
+    padding-left: 26px;
+    position: relative;
+}
+
+.icon-list li::before {
+    content: "✔";
+    color: #0f766e;
+    position: absolute;
+    left: 0;
+}
+
+/* ---------- TIMELINE ---------- */
+/* ---------- TIMELINE ---------- */
+.timeline {
+    margin-top: 40px;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+}
+
+/* Vertical line */
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: #e2e8f0;
+    z-index: 1;
+}
+
+.timeline-item {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    position: relative;
+    margin-bottom: 40px;
+    width: 100%;
+}
+
+.timeline-item:last-child {
+    margin-bottom: 0;
+}
+
+.timeline-marker {
+    width: 50px;
+    height: 50px;
+    position: relative;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.circle {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: #fff;
+    border: 4px solid #0f766e;
+    box-shadow: 0 0 0 4px white;
+    /* Gap effect */
+}
+
+.timeline-left {
+    width: 45%;
+    text-align: right;
+    padding-right: 30px;
+    padding-top: 2px;
+}
+
+.timeline-right {
+    width: 45%;
+    padding-left: 30px;
+    padding-top: 2px;
+}
+
+.timeline-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: #0f766e;
+}
+
+/* ---------- ADDONS ---------- */
+.addon-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.addon {
+    border: 2px solid #0f766e;
+    padding: 24px;
+    background: rgba(15, 118, 110, 0.03);
+    transition: all 0.3s ease;
+}
+
+.addon:hover {
+    background: rgba(15, 118, 110, 0.08);
+    transform: translateY(-2px);
+}
+
+.addon strong {
+    display: block;
+    font-size: 20px;
+    margin-bottom: 12px;
+    color: #0f766e;
+}
+
+.addon p {
+    margin: 0;
+    line-height: 1.6;
+}
+
+/* ---------- TABLE ---------- */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    padding: 14px;
+    border-bottom: 1px solid #cbd5f5;
+    text-align: left;
+}
+
+th {
+    color: #0f766e;
+}
+
+
+.invoice-page .invoice-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 60px;
+}
+
+.invoice-header .brand {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.invoice-header .brand img.logo {
+    height: 60px;
+    width: auto;
+}
+
+.invoice-header h1 {
+    font-size: 36px;
+    margin: 0;
+}
+
+.invoice-meta {
+    text-align: right;
+    font-size: 14px;
+    line-height: 1.8;
+}

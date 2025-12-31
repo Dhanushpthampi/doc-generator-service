@@ -1,0 +1,67 @@
+<div class="page invoice-page">
+    <div class="invoice-header">
+        <div class="brand">
+            <img src="../assets/logo.jpg" alt="Logo" class="logo" />
+            <h1>DreamDvpr</h1>
+        </div>
+        <div class="invoice-meta">
+            <div><strong>Invoice #</strong> {{ invoice_number }}</div>
+            <div><strong>Date</strong> {{ date }}</div>
+            <div><strong>Due</strong> {{ due_date }}</div>
+        </div>
+    </div>
+
+    <div class="invoice-info">
+        <div>
+            <h3>Billed To</h3>
+            <p>
+                <strong>{{ client_name }}</strong><br>
+                {{ client_address }}
+            </p>
+        </div>
+        <div>
+            <h3>From</h3>
+            <p>
+                <strong>DreamDvpr</strong><br>
+                hello@dreamdvpr.com<br>
+                dreamdvpr.com
+            </p>
+        </div>
+    </div>
+
+    <table class="invoice-table">
+        <thead>
+            <tr>
+                <th>Description</th>
+                <th style="text-align:right;">Amount</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in items %}
+            <tr>
+                <td>{{ item.name }}</td>
+                <td style="text-align:right;">{{ item.price }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <div class="invoice-total">
+        <div class="total-row">
+            <span>Subtotal</span>
+            <span>{{ subtotal }}</span>
+        </div>
+        <div class="total-row">
+            <span>Tax</span>
+            <span>{{ tax }}</span>
+        </div>
+        <div class="total-row grand">
+            <span>Total</span>
+            <span>{{ total }}</span>
+        </div>
+    </div>
+
+    <div class="invoice-footer">
+        <p>Thank you for working with DreamDvpr. Please make payment within the due date.</p>
+    </div>
+</div>
