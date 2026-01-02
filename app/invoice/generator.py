@@ -1,3 +1,8 @@
+import os, uuid, traceback
+from jinja2 import Environment, FileSystemLoader
+from playwright.sync_api import sync_playwright
+from ..config import s3, R2_BUCKET, R2_PUBLIC_URL
+
 def generate_invoice_pdf(data):
     try:
         # Get absolute path to the project root
@@ -59,6 +64,5 @@ def generate_invoice_pdf(data):
 
     except Exception as e:
         print(f"ERROR in generate_invoice_pdf: {str(e)}")
-        import traceback
         traceback.print_exc()
         raise e
