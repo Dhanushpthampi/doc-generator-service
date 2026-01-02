@@ -6,6 +6,16 @@ from app.proposal.generator import generate_proposal_pdf
 
 app = FastAPI()
 
+from fastapi.middleware.cors import CORSMiddleware
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
 # ---------- Invoice Endpoint ----------
 @app.post("/generate/invoice-premium")
 def invoice_endpoint(data: InvoiceRequest):
