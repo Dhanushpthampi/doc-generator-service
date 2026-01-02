@@ -1,6 +1,6 @@
 import os, uuid, traceback
 from jinja2 import Environment, FileSystemLoader
-from playwright.sync_api import sync_playwright
+from weasyprint import HTML
 from ..config import s3, R2_BUCKET, R2_PUBLIC_URL
 
 def generate_invoice_pdf(data):
@@ -44,17 +44,10 @@ def generate_invoice_pdf(data):
         
         print(f"DEBUG: HTML written to {html_path}")
 
-        with sync_playwright() as p:
-            print("DEBUG: Launching browser...")
-            browser = p.chromium.launch(args=['--no-sandbox', '--disable-setuid-sandbox'])
-            page = browser.new_page()
-            print(f"DEBUG: Navigating to {html_path}")
-            page.goto("file://" + html_path)
-            print("DEBUG: Generating PDF...")
-            page.pdf(path=pdf_path, format="A4", print_background=True,
-                     margin={"top": "0px", "bottom": "0px", "left": "0px", "right": "0px"})
-            browser.close()
-            print("DEBUG: PDF generated")
+        print("DEBUG: Generating PDF with WeasyPrint...")
+        # base_url is set to template_dir so that relative paths like "../assets/logo.jpg" work correctly.
+        HTML(string=html, base_url=template_dir).write_pdf(pdf_path)
+        print("DEBUG: PDF generated")
 
         key = f"invoices/{file_id}.pdf"
         print(f"DEBUG: Uploading to {key}")
