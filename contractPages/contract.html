@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Service Agreement</title>
+    <style>
+        body {
+            font-family: 'Helvetica', 'Arial', sans-serif;
+            color: #333;
+            line-height: 1.6;
+            margin: 40px;
+            font-size: 12pt;
+        }
+
+        h1 {
+            text-align: center;
+            text-transform: uppercase;
+            font-size: 18pt;
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            font-size: 14pt;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 5px;
+        }
+
+        p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        ul {
+            list-style-type: disc;
+            margin-left: 20px;
+            margin-bottom: 15px;
+        }
+
+        li {
+            margin-bottom: 5px;
+        }
+
+        .signature-block {
+            margin-top: 60px;
+            page-break-inside: avoid;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        td {
+            width: 50%;
+            vertical-align: top;
+            padding-right: 20px;
+        }
+
+        .sig-line {
+            border-top: 1px solid #000;
+            margin-top: 40px;
+            padding-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Independent Contractor Agreement</h1>
+
+    <p>This Independent Contractor Agreement (the "Agreement") is made effective as of <strong>{{ start_date }}</strong>
+        (the "Effective Date"), by and between:</p>
+
+    <p><strong>Client:</strong> {{ client_name }} ("Client")</p>
+    <p><strong>Contractor:</strong> DreamDvpr ("Contractor")</p>
+
+    <h2>1. Scope of Services</h2>
+    <p>Contractor agrees to perform the following services (the "Services") for the project "<strong>{{ project_name
+            }}</strong>":</p>
+    <ul>
+        {% for item in scope_of_work %}
+        <li>{{ item }}</li>
+        {% endfor %}
+    </ul>
+
+    <h2>2. Term</h2>
+    <p>The term of this Agreement shall commence on the Effective Date and shall continue until completion of the
+        Services or until <strong>{{ end_date or "terminated by either party" }}</strong>.</p>
+
+    <h2>3. Compensation</h2>
+    <p>Client agrees to pay Contractor a total amount of <strong>${{ total_amount }}</strong> for the Services. </p>
+    <p><strong>Payment Terms:</strong> {{ payment_terms }}</p>
+
+    <h2>4. Relationship of Parties</h2>
+    <p>Contractor is an independent contractor and is not an employee of Client. Contractor is free to perform services
+        for other clients.</p>
+
+    <h2>5. Ownership of Work Product</h2>
+    <p>Upon full payment, Contractor grants Client exclusive ownership of all final deliverables created as part of the
+        Services. Contractor retains the right to use the work for portfolio and marketing purposes.</p>
+
+    <h2>6. Confidentiality</h2>
+    <p>Contractor acknowledges that it may have access to information that is treated as confidential and proprietary by
+        the Client. Contractor agrees to keep all such information confidential.</p>
+
+    <div class="signature-block">
+        <table>
+            <tr>
+                <td>
+                    <p><strong>Client:</strong></p>
+                    <p>{{ client_name }}</p>
+                    <div class="sig-line">Signature</div>
+                    <div class="sig-line">Date</div>
+                </td>
+                <td>
+                    <p><strong>Contractor:</strong></p>
+                    <p>DreamDvpr</p>
+                    <div class="sig-line">Signature</div>
+                    <div class="sig-line">Date</div>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+</body>
+
+</html>
