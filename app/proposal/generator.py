@@ -30,7 +30,7 @@ def generate_proposal_pdf(data):
     open(html_path, "w").write(html)
 
     with sync_playwright() as p:
-        browser = p.chromium.launch()
+        browser = p.chromium.launch(args=['--no-sandbox', '--disable-setuid-sandbox'])
         page = browser.new_page()
         page.goto("file://" + os.path.abspath(html_path))
         page.pdf(path=pdf_path, format="A4", print_background=True,
