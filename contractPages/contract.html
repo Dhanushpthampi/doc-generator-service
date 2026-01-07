@@ -71,14 +71,14 @@
 
     <h1>Independent Contractor Agreement</h1>
 
-    <p>This Independent Contractor Agreement (the "Agreement") is made effective as of <strong>{{ start_date }}</strong>
-        (the "Effective Date"), by and between:</p>
+    <p>This Independent Contractor Agreement is made effective as of <strong>{{ start_date }}</strong> by and between:
+    </p>
 
-    <p><strong>Client:</strong> {{ client_name }} ("Client")</p>
-    <p><strong>Contractor:</strong> DreamDvpr ("Contractor")</p>
+    <p><strong>Client:</strong> {{ client_name }}</p>
+    <p><strong>Contractor:</strong> REDGRAVITY</p>
 
     <h2>1. Scope of Services</h2>
-    <p>Contractor agrees to perform the following services (the "Services") for the project "<strong>{{ project_name
+    <p>Contractor agrees to perform the following services for the project "<strong>{{ project_name
             }}</strong>":</p>
     <ul>
         {% for item in scope_of_work %}
@@ -91,7 +91,7 @@
         Services or until <strong>{{ end_date or "terminated by either party" }}</strong>.</p>
 
     <h2>3. Compensation</h2>
-    <p>Client agrees to pay Contractor a total amount of <strong>${{ total_amount }}</strong> for the Services. </p>
+    <p>Client agrees to pay Contractor a total amount of <strong>₹{{ total_amount }}</strong> for the Services. </p>
     <p><strong>Payment Terms:</strong> {{ payment_terms }}</p>
 
     <h2>4. Relationship of Parties</h2>
@@ -112,14 +112,19 @@
                 <td>
                     <p><strong>Client:</strong></p>
                     <p>{{ client_name }}</p>
-                    <div class="sig-line">Signature</div>
-                    <div class="sig-line">Date</div>
+                    <div class="sig-line"
+                        style="height: 40px; background: #f0f0f0; border: 1px dashed #999; margin-top: 20px;"></div>
+                    <div style="border-top: 1px solid #000; margin-top: 5px;">Signature</div>
+                    <div class="sig-line">Date: _________________</div>
                 </td>
                 <td>
                     <p><strong>Contractor:</strong></p>
-                    <p>DreamDvpr</p>
-                    <div class="sig-line">Signature</div>
-                    <div class="sig-line">Date</div>
+                    <p>REDGRAVITY</p>
+                    <div class="sig-line"
+                        style="font-family: 'Brush Script MT', cursive; font-size: 24px; color: #8B0000; border-top: none; margin-top: 20px;">
+                        REDGRAVITY Authorized</div>
+                    <div style="border-top: 1px solid #000; margin-top: 5px;">Signature</div>
+                    <div class="sig-line">Date: {{ start_date }}</div>
                 </td>
             </tr>
         </table>

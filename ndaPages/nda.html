@@ -70,13 +70,12 @@
 
     <h1>Non-Disclosure Agreement</h1>
 
-    <p>This Non-Disclosure Agreement (the "Agreement") is entered into as of <strong>{{ effective_date }}</strong> (the
-        "Effective Date"), by and between:</p>
+    <p>This Non-Disclosure Agreement is entered into as of <strong>{{ effective_date }}</strong> by and between:</p>
 
-    <p><strong>Disclosing Party:</strong> {{ client_name }} ("Disclosing Party")</p>
-    <p><strong>Receiving Party:</strong> {{ counterparty_name }} ("Receiving Party")</p>
+    <p><strong>Disclosing Party:</strong> REDGRAVITY</p>
+    <p><strong>Receiving Party:</strong> {{ counterparty_name }}</p>
 
-    <p>WHEREAS, the Disclosing Party and the Receiving Party (collectively, the "Parties") desire to establish a
+    <p>WHEREAS, the Disclosing Party and the Receiving Party desire to establish a
         confidential relationship for the purpose of preventing the unauthorized use and disclosure of certain
         proprietary and confidential information.</p>
 
@@ -139,17 +138,20 @@
             <tr>
                 <td>
                     <p><strong>Disclosing Party:</strong></p>
-                    <p>{{ client_name }}</p>
-                    <div class="sig-line">Signature</div>
-                    <div class="sig-line">Date</div>
-                    <div class="sig-line">Name & Title</div>
+                    <p>REDGRAVITY</p>
+                    <div class="sig-line"
+                        style="font-family: 'Brush Script MT', cursive; font-size: 24px; color: #8B0000; border-top: none; margin-top: 20px;">
+                        REDGRAVITY Authorized</div>
+                    <div style="border-top: 1px solid #000; margin-top: 5px;">Signature</div>
+                    <div class="sig-line">Date: {{ effective_date }}</div>
                 </td>
                 <td>
                     <p><strong>Receiving Party:</strong></p>
                     <p>{{ counterparty_name }}</p>
-                    <div class="sig-line">Signature</div>
-                    <div class="sig-line">Date</div>
-                    <div class="sig-line">Name & Title</div>
+                    <div class="sig-line"
+                        style="height: 40px; background: #f0f0f0; border: 1px dashed #999; margin-top: 20px;"></div>
+                    <div style="border-top: 1px solid #000; margin-top: 5px;">Signature</div>
+                    <div class="sig-line">Date: _________________</div>
                 </td>
             </tr>
         </table>
